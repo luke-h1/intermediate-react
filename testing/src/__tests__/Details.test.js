@@ -15,4 +15,3 @@ test("shows modal when toggleModal is called", () => {
   instance.toggleModal();
   expect(instance.state.showModal).toBe(true);
 });
-// on lesson code coverage
