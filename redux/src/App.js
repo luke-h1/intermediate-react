@@ -7,6 +7,8 @@ import Details from "./Details";
 import SearchParams from "./SearchParams";
 import { Provider } from "./SearchContext";
 
+// on lesson :  action creators & actions 
+
 const petfinder = pf({
   key: process.env.API_KEY,
   secret: process.env.API_SECRET
