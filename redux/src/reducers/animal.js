@@ -1,4 +1,4 @@
-export default function animalReducer(state = "dog", action) {
+export default function animalReducer(state = "", action) {
   if (action.type === "SET_ANIMAL") {
     return action.payload;
   } else {
