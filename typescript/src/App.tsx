@@ -6,11 +6,23 @@ import Results from "./Results";
 import Details from "./Details";
 import SearchParams from "./SearchParams";
 import { Provider } from "./SearchContext";
-
+if (!process.env.API_KEY || !process.env.API_SECRET) {
+  throw new Error("No API keys");
+}
 const petfinder = pf({
   key: process.env.API_KEY,
   secret: process.env.API_SECRET
 });
+
+interface State {
+  location: string;
+  animal: string;
+  breed: string;
+  breeds: string[];
+  handleAnimalChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
+  handleBreedChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
+  handleLocationEvent: (event: React.ChangeEvent<HTMLInputElement>) => void;
+}
 
 class App extends React.Component {
   constructor(props) {

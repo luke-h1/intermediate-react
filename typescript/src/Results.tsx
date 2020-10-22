@@ -88,7 +88,6 @@ class Results extends React.Component<Props, State> {
     );
   }
 }
-
 export default function ResultsWithContext(props: RouteComponentProps) {
   return (
     <Consumer>
