@@ -27,7 +27,7 @@ const petfinder = pf({
 });
 
 class Results extends React.Component<Props, State> {
-  constructor(props) {
+  constructor(props: Props) {
     super(props);
 
     this.state = {

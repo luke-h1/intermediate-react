@@ -21,11 +21,12 @@ interface State {
   breeds: string[];
   handleAnimalChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
   handleBreedChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
-  handleLocationEvent: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  handleLocationChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  getBreeds: () => void;
 }
 
-class App extends React.Component {
-  constructor(props) {
+class App extends React.Component<{}, State> {
+  constructor(props: {}) {
     super(props);
 
     this.state = {
@@ -39,12 +40,14 @@ class App extends React.Component {
       getBreeds: this.getBreeds
     };
   }
-  handleLocationChange = event => {
+  public handleLocationChange = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
     this.setState({
       location: event.target.value
     });
   };
-  handleAnimalChange = event => {
+  public handleAnimalChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     this.setState(
       {
         animal: event.target.value
@@ -52,12 +55,12 @@ class App extends React.Component {
       this.getBreeds
     );
   };
-  handleBreedChange = event => {
+  public handleBreedChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     this.setState({
       breed: event.target.value
     });
   };
-  getBreeds() {
+  public getBreeds() {
     if (this.state.animal) {
       petfinder.breed
         .list({ animal: this.state.animal })
