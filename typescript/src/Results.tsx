@@ -1,6 +1,6 @@
 import React from "react";
 import pf, { Pet as PetType } from "petfinder-client";
-import { RouteComponentType, RouteComponentProps } from "@reach/router";
+import { RouteComponentProps } from "@reach/router";
 import Pet from "./Pet";
 import SearchBox from "./SearchBox";
 import { Consumer } from "./SearchContext";
